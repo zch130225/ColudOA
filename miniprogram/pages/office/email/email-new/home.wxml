@@ -1,0 +1,65 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">邮件服务</view>
+</cu-custom>
+<view wx:if="{{condition}}" class="cu-bar  btn-group  bg-white solid-bottom">
+	<image src='/images/icon/send.png' mode='aspectFit' bindtap="send_mail" style="width:25%;height:26px"></image>
+	<image src='/images/icon/save.png' mode='aspectFit' bindtap="save" style="width:25%;height:26px"></image>
+	<image src='/images/icon/delete.png' mode='aspectFit' bindtap="Reset" style="width:25%;height:26px"></image>
+	<image src='/images/icon/email.png' mode='aspectFit' bindtap="uploudImage" style="width:25%;height:26px"></image>
+</view>
+<form>
+	<view class="cu-form-group margin-top">
+		<view class="title">发信人：</view>
+		<input placeholder="" bindinput="mail_from" value="{{mail_from}}" disabled></input>
+	</view>
+	<view wx:if="{{condition}}" class="cu-form-group">
+		<view class="title">收信人：</view>
+		<input placeholder="添加联系人" bindinput="mail_to" value="{{mail_to}}"></input>
+		<button class="cu-btn bg-orange shadow " style="width:90px" bindtap="userlist">通讯录</button>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">主 题：</view>
+		<input placeholder="邮件主题" bindinput="mail_theme" value="{{mail_theme}}" disabled="{{!condition}}"></input>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">信件内容：</view>
+	</view>
+	<view wx:if="{{condition}}" class="cu-form-group  text-box">
+		<text>{{mail_content}}</text>
+		<textarea class="weui-textarea" maxlength="-1" bindinput="mail_content" placeholder="请填写邮件内容"
+			value='{{mail_content}}'>{{mail_content}}</textarea>
+	</view>
+	<view wx:if="{{!condition}}" class="cu-form-group ">
+		<text>{{mail_content}}</text>
+	</view>
+	<view wx:if="{{condition}}" class="cu-bar bg-white margin-top">
+		<view class="action">
+			文件上传
+		</view>
+		<view class="action">
+			{{imgList.length}}/4
+		</view>
+	</view>
+	<view wx:if="{{!condition}}" class="cu-bar bg-white margin-top">
+		<view class="action">
+			附件
+		</view>
+		<view class="action">
+			{{imgList.length}}/4
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="a" data-url="{{imgList[index]}}">
+				<image src='/images/file.png' mode='aspectFill'></image>
+				<view class="cu-tag bg-red " catchtap="{{condition? 'DelFile':'download'}}" data-index="{{index}}">
+					<text class="cuIcon-close">{{imgList[index].name}}</text>
+				</view>
+			</view>
+			<view class="solids {{!condition? 'hidden':'show'}} " bindtap="ChooseFile" wx:if="{{imgList.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+</form>

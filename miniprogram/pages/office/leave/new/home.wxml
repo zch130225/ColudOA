@@ -1,0 +1,62 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">流程审批</view>
+</cu-custom>
+
+<view class="cu-list menu sm-border card-menu margin-top oa_padding">
+  <view class="cu-form-group">
+    <view class="title">普通选择</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <view class="picker">
+        {{index?picker[index]:'请选择'}}
+      </view>
+    </picker>
+
+  </view>
+  <view class="cu-form-group">
+    <view class="title">开始日期选择</view>
+    <picker mode="date" value="{{startdate}}" start="2015-09-01" end="2020-09-01" bindchange="startDateChange">
+      <view class="picker">
+        {{startdate}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">开始时间选择</view>
+    <picker mode="time" value="{{starttime}}" start="07:01" end="21:01" bindchange="startTimeChange">
+      <view class="picker">
+        {{starttime}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">结束日期选择</view>
+    <picker mode="date" value="{{enddate}}" start="2015-09-01" end="2020-09-01" bindchange="endDateChange">
+      <view class="picker">
+        {{enddate}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">时间选择</view>
+    <picker mode="time" value="{{endtime}}" start="09:01" end="21:01" bindchange="endTimeChange">
+      <view class="picker">
+        {{endtime}}
+      </view>
+    </picker>
+  </view>
+
+</view>
+<view class="cu-list menu  card-menu margin-top oa_padding">
+  <view class="cu-form-group margin-top">
+    <view class="title">请假事由：</view>
+  </view>
+  <view class="cu-form-group  text-box">
+    <!-- <text>{{leave_content}}</text> -->
+    <textarea class="weui-textarea" maxlength="-1" bindinput="leave_content" placeholder="请填写请假事由"
+      value='{{leave_content}}'></textarea>
+  </view>
+</view>
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-blue margin-tb-sm lg"  bindtap="Submit">提交</button>
+</view>

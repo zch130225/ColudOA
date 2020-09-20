@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "office": "/pages/office/home/home",
+    "about": "/pages/about/home/home",
+    "home": "/pages/home/home/home"
+  }
+}

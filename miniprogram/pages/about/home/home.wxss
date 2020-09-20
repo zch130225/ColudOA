@@ -1,0 +1,43 @@
+
+.UCenter-bg {
+
+  background-size: cover;
+  height: 250rpx;
+  display: flex;
+  justify-content: center;
+  padding-top: 5rpx;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(41, 43, 38);
+  font-weight: 300;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.png{
+  width:50px;
+  height :50px;
+  margin-top:10px;
+}
+.my{
+  text-align: left;
+  margin-left:30px;
+
+}
+.my_paddind-left{
+padding-left:50rpx;
+padding-right:50rpx;
+}
+.cu-list.menu>.cu-item {
+  min-height: 100rpx;
+
+}
+.name{
+  font-weight:500;
+}
+.cu-form-group {
+  min-height: 70rpx;
+  
+  }
+  

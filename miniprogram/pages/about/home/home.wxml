@@ -1,0 +1,40 @@
+<!--miniprogram/pages/about/home/home.wxml-->
+<scroll-view scroll-y class="scrollPage">
+	<view class="UCenter-bg bg-gradual-white">
+		<image src="/images/user_head.png" class="cu-avatar round png" mode="widthFix"></image>
+		<view class="text-xl name padding"> {{userinfo.user}} 
+		</view>
+	</view>
+
+</scroll-view>
+<scroll-view scroll-y class="scrollPage padding-top">
+	<view class="cu-list menu  card-menu ">
+		<view class="cu-item">
+
+			<form style="width:190%">
+				<view class="cu-form-group">
+					<text class="title  my_paddind-left text-center text-shadow text-black" decode="{{true}}" > 姓 &nbsp; 名&nbsp;：</text>
+					<input placeholder="" placeholder-style="text-gray center" class="my"bindinput="name"value="{{userinfo.name}}"disabled="true"></input>
+				</view>
+				<view class="cu-form-group">
+					<text class="title  my_paddind-left text-center text-shadow text-black" decode="{{true}}" >单 &nbsp; 位&nbsp;：</text>
+					<input placeholder="" placeholder-style="text-gray my my_paddind-left" class="my" bindinput="zone"value="{{userinfo.department[0]}}"disabled="true"></input>
+				</view>
+				<view class="cu-form-group">
+					<text class="title  my_paddind-left text-center text-shadow text-black" decode="{{true}}" >区 &nbsp; 域&nbsp;：</text>
+					<input placeholder="" placeholder-style="text-gray my my_paddind-left" class="my" bindinput="zone"value="{{userinfo.department[1]}}"disabled="true"></input>
+				</view>
+				<view class="cu-form-group">
+					<text class="title  my_paddind-left text-center text-shadow text-black" decode="{{true}}" >班 &nbsp; 组&nbsp;：</text>
+					<input placeholder="" placeholder-style="text-gray my my_paddind-left" class="my" bindinput="zone"value="{{userinfo.department[2]}}"disabled="true"></input>
+				</view>
+				<view class="cu-form-group">
+					<view class="title my_paddind-left text-center text-shadow text-black">手机号：</view>
+					<input placeholder="" placeholder-style="text-gray center my_paddind-left" type="number" class="my" bindinput="phone" value="{{userinfo.phone}}"disabled="true"></input>
+				</view>
+		
+			</form>
+		</view>
+	</view>
+
+</scroll-view>

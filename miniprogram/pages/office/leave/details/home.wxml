@@ -1,0 +1,59 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">流程审批</view>
+</cu-custom>
+
+<view class="cu-list menu sm-border card-menu margin-top oa_padding">
+  <view class="cu-item arrow hd">
+    <view class="content">
+      <text class="text-black">请假类型</text>
+    </view>
+    <view class="action">
+      <text class="text-grey text-sm">选择</text>
+    </view>
+  </view>
+  <view class="cu-item arrow hd">
+    <view class="content">
+      <text class="text-black">开始时间</text>
+    </view>
+    <view class="action">
+      <text class="text-grey text-sm">选择</text>
+    </view>
+  </view>
+  <view class="cu-item arrow hd">
+    <view class="content">
+      <text class="text-black">结束时间</text>
+    </view>
+    <view class="action">
+      <text class="text-grey text-sm">选择</text>
+    </view>
+  </view>
+</view>
+<view class="cu-list menu  card-menu margin-top oa_padding">
+  <view class="cu-form-group margin-top">
+    <view class="title">请假事由：</view>
+  </view>
+  <view class="cu-form-group  text-box">
+    <text>{{mail_content}}</text>
+    <textarea class="weui-textarea" maxlength="-1" bindinput="mail_content" placeholder="请填写请假事由"
+      value='{{mail_content}}'>{{mail_content}}</textarea>
+  </view>
+</view>
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-blue margin-tb-sm lg">提交</button>
+</view>
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-orange"></text> 数字完成
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="numSteps">下一步</button>
+  </view>
+</view>
+<view class="bg-white padding">
+  <view class="cu-steps">
+    <view class="cu-item {{index>num?'':'text-blue'}}" wx:for="{{numList}}" wx:key>
+      <text class="num {{index==2?'err':''}}" data-index="{{index + 1}}"></text> {{item.name}}
+    </view>
+  </view>
+</view>

@@ -1,0 +1,71 @@
+
+<view wx:if="{{login_status}}">
+	<view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
+	<view class="cu-item ">
+		<view class="content">
+			<text class="cuIcon-profilefill text-red"></text>
+			<text class="text-grey">欢迎“{{name}}”梦凡云OA</text>
+		</view>
+		<view class="action">
+			<view class="cu-tag round bg-olive light" bindtap="logout">退出</view>
+		</view>
+	</view>
+</view>
+	<view>
+		<about wx:if="{{PageCur=='about'}}"></about>
+		<office wx:if="{{PageCur=='office'}}"></office>
+		<home wx:if="{{PageCur=='home'}}"></home>
+	</view>
+	<view>
+		<view class="cu-bar tabbar bg-white shadow foot  every_1">
+			<view class="action" bindtap="NavChange" data-cur="home">
+				<view class='cuIcon-cu-image'>
+					<text class="cuIcon-homefill lg text-{{PageCur=='home'?'blue':'gray'}}"></text>
+				</view>
+				<view class="{{PageCur=='home'?'text-blue':'text-gray'}}">公司首页</view>
+			</view>
+			<view class="action" bindtap="NavChange" data-cur="office">
+				<view class='cuIcon-cu-image'>
+					<text class="cuIcon-circlefill lg text-{{PageCur=='office'?'blue':'gray'}}"></text>
+				</view>
+				<view class="{{PageCur=='basics'?'text-blue':'text-gray'}}">办公桌面</view>
+			</view>
+			<view class="action" bindtap="NavChange" data-cur="about">
+				<view class='cuIcon-cu-image'>
+					<text class="cuIcon-people{{PageCur=='about'?'fill':''}} lg text-{{PageCur=='about'?'blue':'gray'}}"></text>
+				</view>
+				<view class="{{PageCur=='about'?'text-blue':'text-gray'}} ">个人中心</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view wx:if="{{!login_status}}" class="container" style="height:{{height}}px">
+	<view>
+		<view class="solids-bottom padding-xs flex align-center margin-top">
+			<view class="flex-sub text-center">
+				<view class="solid-bottom text-xl padding">
+					<text class="text-white text-bold" style="font-size:30px">欢迎使用</text>
+				</view>
+				<view class="solid-bottom text-xl margin-bottom">
+					<text class="text-white text-bold" style="font-size:26px">[梦凡]云OA系统</text>
+				</view>
+			</view>
+		</view>
+		<view>
+			<view class="cu-form-group margin">
+				<view class="title text-bold">账 号：</view>
+				<input placeholder="输入用户名" bindinput="login_user" value="{{login_user}}"></input>
+			</view>
+			<view class="cu-form-group margin">
+				<view class="title text-bold">密 码：</view>
+				<input placeholder="输入密码" password bindinput="login_psw" value="{{login_psw}}"></input>
+			</view>
+		</view>
+		<view class="box">
+			<view class="cu-bar btn-group">
+				<button class="cu-btn bg-blue shadow-blur round lg" open-type="getUserInfo" bindgetuserinfo="login">登录</button>
+			</view>
+		</view>
+	</view>
+</view>

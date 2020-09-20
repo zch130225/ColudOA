@@ -1,0 +1,6 @@
+/* miniprogram/pages/office/leave/home/home.wxss */
+
+.cu_padding {
+  padding: 30rpx 30rpx 30rpx 30rpx;
+  right: 1px;
+}

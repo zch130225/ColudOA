@@ -1,0 +1,9 @@
+
+.hd {  
+  border-width: 0 0  10rpx;  
+  border-color: #d5d8d8;  
+  border-style: solid;  
+}  
+.oa_padding{
+  padding-bottom:60px;
+}

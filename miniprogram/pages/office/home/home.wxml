@@ -1,0 +1,17 @@
+<view class="cu-bar bg-white margin-top">
+	<view class="action">
+		<text class="cuIcon-titles text-green"></text>
+		<text class="text-xl text-bold">办公事务</text>
+	</view>
+</view>
+<view class="cu-list grid col-3 hd">
+	<view class="cu-item hd" wx:for="{{iconList}}" wx:key="a" wx:if="{{index<3}}" data-index='{{item.badge}}'
+		bindtap="Navigation">
+		<view class="cuIcon-{{item.icon}} text-{{item.color}}" style="font-size:2.5em"></view>
+		<view class="text-center text-shadow text-orange">
+			<view class=" text-black " style="font-size: 30rpx;padding-bottom:10px">{{item.name}}</view>
+		</view>
+	</view>
+</view>
+
+

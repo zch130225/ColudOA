@@ -1,0 +1,27 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">工资查询</view>
+</cu-custom>
+<view class="cu-form-group">
+  <view class="title">日期选择</view>
+  <picker mode="date" value="{{date}}" start="2020-08" end="{{date}}" bindchange="DateChange" fields="month">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+</view>
+<view wx:if="{{!empty}}">
+  <view class="cu-form-group light" wx:for="{{list}}" wx:key="a"  > 
+    <view class="title ">{{item}}：</view>
+    <input placeholder="{{wages[index]}}"></input>
+  </view>
+</view>
+<view wx:if="{{empty}}" class="">
+  <view class="solids-bottom padding-xs flex align-center">
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-xl padding">
+        <text class="text-black text-bold">没有查询到工资数据！</text>
+      </view>
+    </view>
+  </view>
+</view>

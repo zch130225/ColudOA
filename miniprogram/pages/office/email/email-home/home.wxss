@@ -1,0 +1,11 @@
+
+.hd {  
+  content: "";  
+  border-width: 3.5rpx 7rpx 3.5rpx  7rpx;  
+  border-color: #d5d8d8;  
+  border-style: solid;  
+}  
+.right {
+  position: absolute;
+  right: 1px;
+}

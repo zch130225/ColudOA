@@ -1,0 +1,36 @@
+.btn{
+  padding:10px;
+}
+.text-box{
+  width:100%; 
+  position: relative;
+  min-height:200rpx;
+}
+.text-box text{
+ display:block;
+ visibility:hidden;
+ word-break:break-all;
+ word-wrap:break-word;
+}
+.text-box .weui-textarea{
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0; 
+  overflow-y:hidden;
+  word-break:break-all;
+  word-wrap:break-word;
+  padding:0 15px 0 15px
+}
+.hd {  
+  content: "";  
+  border-width: 3.5rpx 7rpx 3.5rpx  7rpx;  
+  border-color: #d5d8d8;  
+  border-style: solid;  
+} 
+.hidden{
+  display:none
+}
+.show{
+  display: block;
+}

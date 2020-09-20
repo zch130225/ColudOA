@@ -1,0 +1,32 @@
+/* miniprogram/pages/home/details/home.wxss */
+/* pages/details/index.wxss */
+.str1{
+  
+  font-size:7vw;
+  display:block;
+  padding:1vh 0;
+  word-wrap:break-word;
+  word-break:normal;
+  text-align:center;
+
+}
+.str2{
+  
+  font-size:4vw;
+  display:block;
+  padding:vh 0;
+  word-wrap:break-word;
+  word-break:normal;
+  text-align:center;
+
+}
+.str3{
+  
+  font-size:5vw;
+  /* display:block; */
+  padding:2vh  3vh 2vh 3vh;
+  word-wrap:break-word;
+  word-break:normal;
+  text-align:justify;
+
+}

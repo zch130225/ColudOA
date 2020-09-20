@@ -1,0 +1,64 @@
+<wxs module="dateUtil" src="../../../../com/dateFormat.wxs"></wxs>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">流程审批</view>
+</cu-custom>
+<view class="cu-bar bg-white solid-bottom ">
+  <view class="action">
+    <text class="cuIcon-title text-orange "></text> 已提交流程
+  </view>
+  <text class="cuIcon-add text-grey  text-xs  margin-right-xs right" bindtap="open_new"> 新建</text>
+</view>
+
+<view class="cu-list menu-avatar comment solids-top" wx:for="{{list}}" wx:key="a">
+  <view class="cu-item ">
+    <view class="content">
+      <view class='flex solid-bottom  justify-between padding-bottom'>
+        <view class="text-grey">申请人 ：{{list[index].applicant}}{{position}}</view>
+        <image src='/images/icon/{{list[index].status}}.png' mode='aspectFit' style="width:20%;height:26px"
+          bindtap="{{position!=2?'showModal':''}}" data-id="{{list[index]._id}}" data-target="Modal"></image>
+      </view>
+      <view class="text-gray text-content text-df">
+        流程类型 ：{{list[index].type}}
+      </view>
+      <view class="text-gray text-content text-df">
+        开始时间 ：{{list[index].startdate}} {{list[index].starttime}}
+      </view>
+      <view class="text-gray text-content text-df">
+        结束时间 ：{{list[index].enddate}} {{list[index].endtime}}
+      </view>
+      <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+        <view class="flex">
+          <view class="flex-sub">事由：{{list[index].leave_content}}</view>
+        </view>
+      </view>
+      <view class="margin-top-sm flex justify-between">
+        <view class="text-gray text-df">提交时间:{{dateUtil.dateFormat(list[index].Creationtime,'YYYY-MM-dd hh:mm:ss')}}</view>
+        <view>
+          <image src='/images/icon/ing.png' mode='aspectFit' bindtap="send_mail" style="width:25%;height:26px"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">领导意见</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+
+    <view class="flex solid-bottom  justify-between">
+      <view class="margin-tb-sm text-center padding ">
+        <button class="margin-tb-sm round bg-orange shadow" style="width:30vw" data-id="{{}}" bindtap="no">驳回</button>
+      </view>
+      <view class="margin-tb-sm text-center padding">
+        <button class=" margin-tb-sm round bg-green shadow" style="width:30vw" data-id="{{}}" bindtap="yes">同意</button>
+      </view>
+    </view>
+
+  </view>
+</view>

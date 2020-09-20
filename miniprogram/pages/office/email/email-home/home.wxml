@@ -1,0 +1,36 @@
+<wxs module="dateUtil" src="../../../../com/dateFormat.wxs"></wxs>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">邮件服务</view>
+</cu-custom>
+<view class="cu-bar bg-white solid-bottom ">
+	<view class="action">
+		<text class="cuIcon-title text-orange "></text> 内部信件列表
+	</view>
+	<text class="cuIcon-add text-grey  text-xs  margin-right-xs right" bindtap="open_new_mail"> 写信</text>
+</view>
+<view class="cu-list menu-avatar ">
+	<view class="cu-item hd" wx:for="{{mail}}" wx:key="a" data-_id="{{item._id}}" bindtap="details">
+		<view class="cu-avatar round lg"
+			style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+		<view class="content">
+			<view class="text-gray text-sm flex">
+				<text class="text-cut">
+					<text class="margin-right-xs"></text> {{mail[index].theme}}
+				</text>
+			</view>
+			<view class="text-gray text-sm flex">
+				<text class="text-cut ">
+					<text class="  margin-right-xs">发件人：</text> {{mail[index].From}}
+				</text>
+				<text
+					class="cuIcon-infofill text-{{mail[index].status ? 'red':'green'}}  margin-right-xs right">{{mail[index].status? "未读" : "已读"}}</text>
+			</view>
+		</view>
+		<view class="action">
+			<view class="text-grey text-xs">{{dateUtil.dateFormat(mail[index].date,' hh:mm:ss')}}</view>
+			<view class="text-grey text-xs">{{dateUtil.dateFormat(mail[index].date,'YY-MM-dd')}}</view>
+		</view>
+	</view>
+</view>
+

@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/office/home/home",
+    "pages/about/home/home",
+    "pages/home/home/home",
+    "pages/office/email/email-home/home",
+    "pages/office/email/email-new/home",
+    "pages/home/details/home",
+    "pages/office/wages/home",
+    "pages/office/leave/details/home",
+    "pages/office/leave/home/home",
+    "pages/office/leave/new/home",
+    "pages/userlist/home"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "梦凡云OA系统",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
